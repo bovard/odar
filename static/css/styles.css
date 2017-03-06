@@ -1,0 +1,102 @@
+#content{
+    margin-top: 20px;
+}
+
+#map {
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Canvas */
+#canvasContainer{
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px){
+    #canvasContainer{
+        margin-bottom: 15px;
+    }
+}
+
+/* Canvas Controls */
+#canvasZoomButtonsContainer{
+    position: absolute;
+    bottom: 5px;
+    width: 30%;
+    left: 35%;
+    z-index: 1; }
+    #canvasZoomButtonsContainer .zoomButton{
+        float: left;
+        margin-right: 1%;
+        width: 49%; 
+        font-size: 1em; }
+    #canvasZoomButtonsContainer #zoomIn:before{
+        content: "Zoom In"; }
+    #canvasZoomButtonsContainer #zoomOut:before{
+        content: "Zoom Out"; }   
+    @media (max-width: 650px){
+    #canvasZoomButtonsContainer .zoomButton{
+        font-size: .6em; }
+    }
+    @media (max-width: 420px){
+    #canvasZoomButtonsContainer #zoomIn:before{
+        content: "+"; }
+    #canvasZoomButtonsContainer #zoomOut:before{
+        content: "-"; }   
+    }
+
+.tile {
+    /* border: 1px solid #000000; */
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+}
+
+.in-sight {
+    background-color: rgba(255, 255, 255, 0.15)
+}
+
+.grass {
+    /* http://opengameart.org/node/7539 */
+    background: url(../images/textures/grass.png) center center fixed;
+}
+
+.dirt {
+    /* http://opengameart.org/node/7404 */
+    background: url(../images/textures/dirt.png) center center fixed;
+}
+
+.sand {
+    /* http://opengameart.org/node/10570 */
+    background: url(../images/textures/sand.png) center center fixed;
+}
+
+.cement {
+    /* http://opengameart.org/node/6989 */
+    background: url(../images/textures/cement.png) center center fixed;
+}
+
+.tree {
+    /* http://opengameart.org/node/10054 */
+    background: url(../images/textures/tree.png) center center fixed;
+}
+td.tree {
+    border-radius: 100%;
+}
+
+.wall {
+    /* http://opengameart.org/node/48263 */
+    background: url(../images/textures/wall.png) center center fixed;
+}
+
+.water {
+    /* http://opengameart.org/node/10510 */
+    background: url(../images/textures/water.png) center center fixed;
+}
+
+.rock {
+    /* http://opengameart.org/node/8062 */
+    background: url(../images/textures/rock.png) center center fixed;
+}
+td.rock {
+    border-radius: 100%;
+}
