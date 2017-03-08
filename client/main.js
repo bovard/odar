@@ -35,7 +35,7 @@ var UnitType = require('../lib/UnitType');
 
 // graphics
 var GraphicsConstants = require('../lib/Graphics/GraphicsConstants');
-var GameRenderer = require('../lib/Graphics/GameRenderer');
+var GameRenderer = require('../lib/Graphics/GameRendererHexi');
 
 // Game constants
 var GameConstants = require('../lib/GameConstants');
