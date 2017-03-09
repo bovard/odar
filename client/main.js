@@ -576,7 +576,7 @@ var Raid = React.createClass({
             "renderer": GameConstants.RENDER_WITH_CANVAS ? "canvas" : "table",
             "canvas": canvas,
             "currentZoomFactor": GraphicsConstants.FX_VIEWPORT_DEFAULT_ZOOM_FACTOR,
-            "gameRenderer": new GameRenderer(canvas),
+            "gameRenderer": new GameRenderer(GraphicsConstants.FX_VIEWPORT_CANVAS_WIDTH, GraphicsConstants.FX_VIEWPORT_CANVAS_HEIGHT),
             "playerCode": JSON.parse(localStorage.getItem("playerCode")) || samplePlayer.join('\n')
         }
     },
