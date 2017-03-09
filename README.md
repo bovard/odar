@@ -1,4 +1,4 @@
-# Of Rocks and Dust
+# Of Dust and Rocks
 
 Our entry to 7DRL 2017
 
