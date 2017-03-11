@@ -35,7 +35,7 @@ var UnitType = require('../lib/UnitType');
 
 // graphics
 var GraphicsConstants = require('../lib/Graphics/GraphicsConstants');
-var GameRenderer = require('../lib/Graphics/GameRenderer');
+var GameRenderer = require('../lib/Graphics/GameRendererHexi');
 
 // Game constants
 var GameConstants = require('../lib/GameConstants');
@@ -248,6 +248,7 @@ var CanvasRenderer = React.createClass({
         };
     },
     componentDidMount: function () {
+        console.log(props);
         ReactDOM.findDOMNode(this).children[0].appendChild(this.props.canvas);
     },
     handleZoomIn: function() {
@@ -563,10 +564,8 @@ var BetweenLevelContent = React.createClass({
 var Raid = React.createClass({
     getInitialState: function() {
         var gR = new GameRunner(this.renderUI, GameConstants.RENDER_WITH_CANVAS ? this.renderCanvas : null);
-        var canvas = document.createElement('canvas');
-        canvas.width = GraphicsConstants.FX_VIEWPORT_CANVAS_WIDTH;
-        canvas.height = GraphicsConstants.FX_VIEWPORT_CANVAS_HEIGHT;
-        canvas.style.cssText = "width: 100%; height: 100%;";
+        var gameRenderer = new GameRenderer(GraphicsConstants.FX_VIEWPORT_CANVAS_WIDTH, GraphicsConstants.FX_VIEWPORT_CANVAS_HEIGHT);
+        var canvas = gameRenderer.canvas;
         return {
             "gameRunner": gR,
             "game": null,
@@ -576,7 +575,7 @@ var Raid = React.createClass({
             "renderer": GameConstants.RENDER_WITH_CANVAS ? "canvas" : "table",
             "canvas": canvas,
             "currentZoomFactor": GraphicsConstants.FX_VIEWPORT_DEFAULT_ZOOM_FACTOR,
-            "gameRenderer": new GameRenderer(canvas),
+            "gameRenderer": gameRenderer,
             "playerCode": JSON.parse(localStorage.getItem("playerCode")) || samplePlayer.join('\n')
         }
     },
